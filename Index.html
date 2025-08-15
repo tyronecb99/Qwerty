@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobForge - CV Builder</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f8f8f8;
+    }
+    header {
+        background-color: #333;
+        color: white;
+        padding: 1em;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    main {
+        padding: 1em;
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+        border-radius: 5px;
+    }
+    label {
+        display: block;
+        margin-top: 1em;
+        font-weight: bold;
+    }
+    input, textarea, select {
+        width: 100%;
+        padding: 0.5em;
+        margin-top: 0.3em;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    button {
+        background-color: #333;
+        color: white;
+        padding: 0.7em 1em;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 1em;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #555;
+    }
+    .cv-preview {
+        margin-top: 2em;
+        padding: 1em;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+        border-radius: 3px;
+    }
+</style>
+</head>
+<body>
+
+<header>JobForge - CV Builder</header>
+
+<main>
+    <label>Full Name</label>
+    <input type="text" id="name">
+
+    <label>Email</label>
+    <input type="email" id="email">
+
+    <label>Phone</label>
+    <input type="tel" id="phone">
+
+    <label>Professional Summary</label>
+    <textarea id="summary"></textarea>
+
+    <label>Work Experience</label>
+    <textarea id="experience"></textarea>
+
+    <label>Education</label>
+    <textarea id="education"></textarea>
+
+    <label>Skills</label>
+    <textarea id="skills"></textarea>
+
+    <button onclick="generateCV()">Generate CV</button>
+
+    <div class="cv-preview" id="cvPreview" style="display:none;">
+        <h2 id="cvName"></h2>
+        <p><strong>Email:</strong> <span id="cvEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="cvPhone"></span></p>
+        <h3>Professional Summary</h3>
+        <p id="cvSummary"></p>
+        <h3>Work Experience</h3>
+        <p id="cvExperience"></p>
+        <h3>Education</h3>
+        <p id="cvEducation"></p>
+        <h3>Skills</h3>
+        <p id="cvSkills"></p>
+    </div>
+</main>
+
+<script>
+function generateCV() {
+    document.getElementById("cvName").innerText = document.getElementById("name").value;
+    document.getElementById("cvEmail").innerText = document.getElementById("email").value;
+    document.getElementById("cvPhone").innerText = document.getElementById("phone").value;
+    document.getElementById("cvSummary").innerText = document.getElementById("summary").value;
+    document.getElementById("cvExperience").innerText = document.getElementById("experience").value;
+    document.getElementById("cvEducation").innerText = document.getElementById("education").value;
+    document.getElementById("cvSkills").innerText = document.getElementById("skills").value;
+    
+    document.getElementById("cvPreview").style.display = "block";
+}
+</script>
+
+</body>
+</html>
